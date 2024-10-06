@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace amfTaskManager.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class UserTasksController : Controller
     {
         private readonly ApplicationDbContext _context;

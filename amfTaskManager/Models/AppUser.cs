@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace amfTaskManager.Models
 {
-    public class AppUser:IdentityUser
+    public class AppUser : IdentityUser
     {
-        [StringLength(100)]
-        [MaxLength(100)]
         [Required]
-        public String? Name {  get; set; }
+        [StringLength(100, ErrorMessage = "The Name must be at most 100 characters long.")]
+        public string Name { get; set; } = string.Empty;
 
-        public String Address { get; set; }
+        [StringLength(200, ErrorMessage = "The Address must be at most 200 characters long.")]
+        public string? Address { get; set; }
     }
 }

@@ -16,6 +16,7 @@ namespace amfTaskManager.ViewModels
         [Compare("Password", ErrorMessage ="Password don't match")]
         public string? ConfirmPassword { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string? Address { get; set; }
     }
 }
