@@ -1,10 +1,12 @@
 ﻿using amfTaskManager.Data;
 using amfTaskManager.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace amfTaskManager.Controllers
 {
+    [Authorize]
     public class UserTasksController : Controller
     {
         private readonly ApplicationDbContext _context;

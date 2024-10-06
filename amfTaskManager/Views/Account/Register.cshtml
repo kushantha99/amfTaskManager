@@ -1,0 +1,47 @@
+﻿@using amfTaskManager.ViewModels
+@model RegisterVM
+
+@{
+    ViewData["Title"] = "Register"; // Update the title to "Register"
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Register" method="post">
+    <!-- Change action to Register -->
+    <div class="form-group">
+        <label asp-for="Name"></label> <!-- Name field -->
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label> <!-- Email field -->
+        <input asp-for="Email" type="email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label> <!-- Password field -->
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label> <!-- Confirm Password field -->
+        <input asp-for="ConfirmPassword" type="password" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label> <!-- Address field -->
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    
+    <input type="submit" value="Register" class="btn btn-danger" />
+</form>
+
+<p>
+    <a asp-controller="Account" asp-action="Login">Already have an account? Login here.</a> <!-- Update to link to Login -->
+</p>
+<p>
+    <a asp-controller="Account" asp-action="ForgotPassword">Forgot your password?</a>
+</p>
