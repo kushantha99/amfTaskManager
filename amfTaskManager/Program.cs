@@ -13,12 +13,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Configure Identity with your custom AppUser class
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
-    options.Password.RequireDigit = false;              // No digit required
-    options.Password.RequiredLength = 1;                // Minimum length
-    options.Password.RequireNonAlphanumeric = false;    // No special character required
-    options.Password.RequireUppercase = false;          // No uppercase letter required
-    options.Password.RequireLowercase = false;          // No lowercase letter required
-    options.Password.RequiredUniqueChars = 0;           // No unique characters required
+    options.Password.RequireDigit = false;              //digit required
+    options.Password.RequiredLength = 1;                //length
+    options.Password.RequireNonAlphanumeric = false;    //special character required
+    options.Password.RequireUppercase = false;          //uppercase letter required
+    options.Password.RequireLowercase = false;          //lowercase letter required
+    options.Password.RequiredUniqueChars = 0;           //unique characters required
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
@@ -41,12 +41,12 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthentication(); // Enables authentication
+app.UseAuthentication(); 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=UserTasks}/{action=Index}/{id?}");
-app.MapRazorPages(); // Enables Identity pages
+app.MapRazorPages(); 
 
 app.Run();
